@@ -321,6 +321,22 @@ py_test(
     ],
 )
 
+py_test(
+    name = "quantize_numerical_test",
+    srcs = ["quantize_numerical_test.py"],
+    python_version = "PY3",
+    deps = [
+        ":quantize",
+        ":utils",
+        # absl/testing:parameterized dep1,
+        # numpy dep1,
+        # tensorflow dep1,
+        "//tensorflow_model_optimization/python/core/keras:compat",
+        "//tensorflow_model_optimization/python/core/keras:test_utils",
+        "//tensorflow_model_optimization/python/core/keras/testing:test_utils_mnist",
+    ],
+)
+
 py_library(
     name = "utils",
     srcs = [
